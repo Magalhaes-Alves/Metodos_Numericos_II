@@ -1,12 +1,12 @@
 from integracoes import integracao
 
-print("Calculadora da Integral da função f(x)=(sin(2*x) + 4*(x**2) + 3*x)**2 pelas fórmulas de Newton-Cotes")
+print("\nCalculadora da Integral da função f(x)=(sin(2*x) + 4*(x**2) + 3*x)**2 pelas fórmulas de Newton-Cotes")
 
-print("Menu")
+print("------------------------Menu---------------------------")
 print("0-Resposta pedida na tarefa 3")
 print("1-Calcular a Integral da função por uma fórmula fechada")
 print("2-Calcular a Integral da função por uma fórmula aberta")
-
+print("-------------------------------------------------------\n")
 opcao = input(("Digite a opção que você deseja:"))
 
 if opcao == '0':
@@ -52,7 +52,7 @@ if opcao == '0':
 
     integracao(0,1, 0.0000001, 4, True)
 elif opcao == '1':
-    limiteInferior = float(input("Digite o limite inferior da integral:"))
+    limiteInferior = float(input("\nDigite o limite inferior da integral:"))
     
     limiteSuperior = float(input("Digite o limite superior da integral:"))
 
@@ -68,7 +68,7 @@ elif opcao == '1':
 
     integracao(limiteInferior,limiteSuperior,erro,grauPolinomio)
 elif opcao == '2':
-    limiteInferior = float(input("Digite o limite inferior da integral:"))
+    limiteInferior = float(input("\nDigite o limite inferior da integral:"))
     
     limiteSuperior = float(input("Digite o limite superior da integral:"))
 
