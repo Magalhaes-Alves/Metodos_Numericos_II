@@ -1,4 +1,4 @@
-from math import sin, fabs, inf, cos,acos
+from math import sin, fabs, inf
 
 
 def f(x):
