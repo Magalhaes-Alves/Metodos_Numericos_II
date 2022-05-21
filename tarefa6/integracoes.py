@@ -62,35 +62,17 @@ def raizesPesos(n,tipo_gauss):
             [1/2*sqrt(2+sqrt(2)),pi/4]
         ]
 
-def integracaoGaussHermite(n):
+def integracaoGaussEspecial(grau_polinomio, tipo_gauss):
     integral = 0
-    zeros_pesos = raizesPesos(n,"h")
+    zeros_pesos = raizesPesos(grau_polinomio,tipo_gauss)
     #print(zeros_pesos)
-    for i in range(n):
+    for i in range(grau_polinomio):
         integral += zeros_pesos[i][1]*f(zeros_pesos[i][0])
 
     return integral
 
-def integracaoGaussLaguerre(n):
-    integral = 0
-    zeros_pesos = raizesPesos(n,"l")
-    #print(zeros_pesos)
-    for i in range(n):
-        integral += zeros_pesos[i][1]*f(zeros_pesos[i][0])
-
-    return integral
-
-def integracaoGaussChebyshev(n):
-    integral = 0
-    zeros_pesos = raizesPesos(n,"t")
-    #print(zeros_pesos)
-    for i in range(n):
-        integral += zeros_pesos[i][1]*f(zeros_pesos[i][0])
-
-    return integral
-
-n= int(input("Digite o grau do polinomio:"))
-print(f"Intergral Gauss-Hermite encontrada: {integracaoGaussHermite(n)}")
-print(f"Intergral Gauss-Laguerre encontrada: {integracaoGaussLaguerre(n)}")
-print(f"Intergral Gauss-Chebyshev encontrada: {integracaoGaussChebyshev(n)}")
+""" n= int(input("Digite o grau do polinomio:"))
+print(f"Intergral Gauss-Hermite encontrada: {integracaoGaussEspecial(n,'h')}")
+print(f"Intergral Gauss-Laguerre encontrada: {integracaoGaussEspecial(n,'l')}")
+print(f"Intergral Gauss-Chebyshev encontrada: {integracaoGaussEspecial(n,'t')}") """
 
