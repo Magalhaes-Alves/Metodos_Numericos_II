@@ -32,7 +32,7 @@ def preparaAutoVetor(x,autovetor):
     autovetor.append(0)
   
 
-def metodoPotenciaInversa(M, x, eps):
+def metodoPotencia(M, x, eps):
   error = float('inf')
 
   autoValor = 0
