@@ -1,18 +1,20 @@
-import numpy as np
 import metodospotencia
 
+eps = 0.000001
 
-tamanhoMatriz = int(input("Insira o tamanho da matriz: "))
-eps = float(input("Insira o erro: "))
-M = np.zeros([tamanhoMatriz, tamanhoMatriz])
-x = np.zeros([tamanhoMatriz, 1])
+M1 = [[5, 2, 1], [2, 3, 1], [1, 1, 2]]
+x1 = [1,1,1]
 
-for i in range(tamanhoMatriz):
-    M[i, :] = [float(j) for j in input("Insira a linha {} da matriz: ".format(i)).split(" ")]
+(autoValor, autoVetor) = metodospotencia.metodoPotenciaInversa(M1, x1, eps)
 
-for i in range(tamanhoMatriz):
-    x[i, 0] = float(input("Insira a posição {} do vetor: ".format(i)))
+print("Primeira matriz:\n")
+print(f"Auto valor: {autoValor}\n\nAuto Vetor:\n{autoVetor}")
 
-(autoValor, autoVetor) = metodospotencia.metodoPotenciaInversa(M, x, eps)
+M2 = [[40, 8, 4, 2, 1], [8, 30, 12, 6, 2], [4, 12, 20, 1, 2],
+ [2, 6, 1, 25, 4], [1, 2, 2, 4, 5]]
+x2 = [1,1,1,1,1]
 
-print("Auto valor: {}\n\nAuto Vetor:\n{}".format(autoValor, autoVetor / autoVetor[2, 0]))
+(autoValor2, autoVetor2) = metodospotencia.metodoPotenciaInversa(M2, x2, eps)
+
+print("\n\nSegunda Matriz:\n")
+print(f"Auto valor: {autoValor2}\n\nAuto Vetor:\n{autoVetor2}")
