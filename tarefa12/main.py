@@ -103,6 +103,26 @@ print(f"Autovetor 4:{P[:,3]/P[2,3]}\n")
 print(f"Autovalor 5:{Abarra[4]}")
 print(f"Autovetor 5:{P[:,4]/P[2,4]}\n")
 
+print("\nMostrando os Autovalores e Autovetores encontrados pelo método de jacobi:\n")
+Pjacobi, Abarrajacobi = ms.metodoJacobi(M, eps)
+
+print(f"Autovalor 1:{Abarrajacobi[0]}")
+print(f"Autovetor 1:{Pjacobi[:,0]/Pjacobi[2,0]}\n")
+
+print(f"Autovalor 2:{Abarrajacobi[1]}")
+print(f"Autovetor 2:{Pjacobi[:,1]/Pjacobi[2,1]}\n")
+
+print(f"Autovalor 3:{Abarrajacobi[2]}")
+print(f"Autovetor 3:{Pjacobi[:,2]/Pjacobi[2,2]}\n")
+
+print(f"Autovalor 4:{Abarrajacobi[3]}")
+print(f"Autovetor 4:{Pjacobi[:,3]/Pjacobi[2,3]}\n")
+
+print(f"Autovalor 5:{Abarrajacobi[4]}")
+print(f"Autovetor 5:{Pjacobi[:,4]/Pjacobi[2,4]}\n")
+
+print()
+
 print("\n2)\n")
 print("i-\nImprimindo Anova que sai de cada iteração de QR:\n")
 
