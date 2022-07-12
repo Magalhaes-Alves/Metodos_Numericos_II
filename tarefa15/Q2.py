@@ -1,3 +1,4 @@
+from distutils.log import error
 import numpy as np
 
 
@@ -67,5 +68,7 @@ def PVC2():
     erro = []
     for exato, obtido in zip(vetorExato, vetorObtido):
         erro.append((exato - obtido)/obtido)
-
+    print("Erro relativo:")
+    print(erro)
+    
     
