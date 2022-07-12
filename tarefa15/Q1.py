@@ -18,47 +18,41 @@ def derivada_segunda(dominio,deltaX):
     r = (1/(deltaX**2))*dominio[0] - (2/(deltaX**2)+1)*dominio[1] + (1/(deltaX**2)*dominio)[2]
     return r
     
-
-N = 8
-yi = 0
-yf = 1
-deltaX = abs(yf-yi)/N
-
-
-dominio = dividir_dominio(yi,yf,deltaX,N)    
-print(f'Dominio:\n{dominio}')
-
-A = np.array([[- (2/(deltaX**2)+1),(1/(deltaX**2)),0,0,0,0,0],
-[(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2)),0,0,0,0],
-[0,(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2)),0,0,0],
-[0,0,(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2)),0,0],
-[0,0,0,(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2)),0],
-[0,0,0,0,(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2))],
-[0,0,0,0,0,(1/(deltaX**2)),- (2/(deltaX**2)+1)]])
-print('MATRIZ:')
-print(A)
-
-B = np.array([0,0,0,0,0,0,-(1/(deltaX**2))])
-print('B:')
-print(B)
-
-print("X:")
-X = np.linalg.solve(A, B)
-print(X)
-
-solucao = solucao_exata(dominio)
-print('SOLUCAO:')
-print(solucao) 
-
-erro = np.copy(X).astype('float')
-for p in range (len(X)):
-    erro[p]= math.fabs(X[p]-solucao[p])/X[p]
-print('ERRO RELATIVO:')
-print(erro) 
+def PVC1():
+    N = 8
+    yi = 0
+    yf = 1
+    deltaX = abs(yf-yi)/N
 
 
-teste = np.copy(X).astype('float')
-for p in range (len(X)):
-    teste[p]=np.dot(A[p],X) 
-print('TESTE: A.X')
-print(teste)     
+    dominio = dividir_dominio(yi,yf,deltaX,N)    
+    print(f'Dominio:\n{dominio}')
+
+    A = np.array([[- (2/(deltaX**2)+1),(1/(deltaX**2)),0,0,0,0,0],
+    [(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2)),0,0,0,0],
+    [0,(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2)),0,0,0],
+    [0,0,(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2)),0,0],
+    [0,0,0,(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2)),0],
+    [0,0,0,0,(1/(deltaX**2)),- (2/(deltaX**2)+1),(1/(deltaX**2))],
+    [0,0,0,0,0,(1/(deltaX**2)),- (2/(deltaX**2)+1)]])
+    print('Matriz:')
+    print(A)
+
+    B = np.array([0,0,0,0,0,0,-(1/(deltaX**2))])
+    print('B:')
+    print(B)
+
+    print("X:")
+    X = np.linalg.solve(A, B)
+    print(X)
+
+    solucao = solucao_exata(dominio)
+    print('Solução:')
+    print(solucao) 
+
+    erro = np.copy(X).astype('float')
+    for p in range (len(X)):
+        erro[p]= math.fabs(X[p]-solucao[p])/X[p]
+    print('Erro relativo:')
+    print(erro) 
+
